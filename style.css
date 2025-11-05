@@ -1,0 +1,84 @@
+/* Body and page setup */
+body {
+    font-family: 'Comic Neue', cursive;
+    background: #FFFAF0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden; /* for floating toppings */
+    padding: 2rem;
+}
+
+/* Titles */
+h1.title {
+    font-size: 5rem;
+    color: #FF6B6B;
+    text-shadow: 2px 2px #FFD93D;
+}
+
+h2.subtitle {
+    font-size: 2rem;
+    color: #FF6347;
+}
+
+/* Pizza Image */
+.pizza-img {
+    max-width: 200px;
+    margin: 2rem 0;
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+    position: relative;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Button styles */
+.button.is-pizza {
+    background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+    color: white;
+    font-weight: bold;
+}
+
+.button.is-pizza:hover {
+    transform: scale(1.1) rotate(-2deg);
+    transition: 0.3s;
+}
+
+/* Floating toppings */
+.topping {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: floatTopping linear infinite;
+}
+
+@keyframes floatTopping {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(-200px) rotate(180deg); }
+    90% { opacity: 1; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0; }
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #FFD93D 0%, transparent 70%);
+    border-radius: 50%;
+    animation: sparkleAnim linear infinite;
+}
+
+@keyframes sparkleAnim {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.5); opacity: 0; }
+}
+
